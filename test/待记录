@@ -1,3 +1,10 @@
+git push 科学用法
+git push 远程仓库 本地分支:远程分支
+git pull 科学用法
+git pull 远程仓库 远程分支:本地分支
+
+
+
 用户组管理
 
 groupadd 选项 用户组 : 增加新的用户组

@@ -1,6 +1,7 @@
 #!/bin/bash
-string="runoob is a great sit"
-echo ${#string[1]}
+string="runoob is a great site"
+echo ${string}
+echo ${#string}
 array[0]=0
 array[1]=1
 array[2]=2
@@ -34,7 +35,7 @@ then
 	echo "error"
 fi
 
-echo -e "tst\"\n"
+echo -e "test\"\n"
 
 echo `date`
 

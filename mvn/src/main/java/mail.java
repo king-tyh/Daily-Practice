@@ -18,7 +18,7 @@ public class mail {
         String smtp = "smtp.qq.com";
         // 登录用户名:
         String username = "2960054048@qq.com";
-        String recevier = "1292989480@qq.com"
+        String receiver = "1292989480@qq.com"
         // 登录口令:  此处需要授权码并非密码
         String password = "";
         // 连接到SMTP服务器587端口:
@@ -42,33 +42,32 @@ public class mail {
         // 设置发送方地址:
         message.setFrom(new InternetAddress(username));
         // 设置接收方地址:
-        message.setRecipient(Message.RecipientType.TO, new InternetAddress(recevier));
+        message.setRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
         // 设置邮件主题:
         message.setSubject("Hello", "UTF-8");
         // 设置邮件正文:--------------------------------------------
         Multipart multipart = new MimeMultipart();
         // 添加text:
-        BodyPart textpart = new MimeBodyPart();
-        textpart.setContent("<h1>你好</h1><a href='http://www.baidu.com'>百度</a><img src='cid:img01'/>", "text/html;charset=utf-8");
-        multipart.addBodyPart(textpart);
+        BodyPart textPart = new MimeBodyPart();
+        textPart.setContent("<h1>你好</h1><a href='http://www.baidu.com'>百度</a><img src='cid:img01'/>", "text/html;charset=utf-8");
+        multipart.addBodyPart(textPart);
 /*        // 添加嵌入图片image:
-        BodyPart imagepart = new MimeBodyPart();
+        BodyPart imagePart = new MimeBodyPart();
         File file = new File("D:\\workspaces\\Email\\src\\main\\resources\\111.jpg");
-        imagepart.setFileName(file.getName());
+        imagePart.setFileName(file.getName());
         InputStream input = new FileInputStream(file);
-        imagepart.setDataHandler(new DataHandler(new ByteArrayDataSource(input, "image/jpg")));
-        imagepart.setHeader("Content-ID", "<img01>");
-        multipart.addBodyPart(imagepart);
+        imagePart.setDataHandler(new DataHandler(new ByteArrayDataSource(input, "image/jpg")));
+        imagePart.setHeader("Content-ID", "<img01>");
+        multipart.addBodyPart(imagePart);
         // 添加附件
-        BodyPart filepart = new MimeBodyPart();
+        BodyPart filePart = new MimeBodyPart();
         File file2 = new File("D:\\workspaces\\Email\\src\\main\\resources\\readme.txt");
-        filepart.setFileName(file.getName());
+        filePart.setFileName(file.getName());
         InputStream input2 = new FileInputStream(file2);
-        filepart.setDataHandler(new DataHandler(new ByteArrayDataSource(input2, "application/octet-stream")));
-        multipart.addBodyPart(filepart);
+        filePart.setDataHandler(new DataHandler(new ByteArrayDataSource(input2, "application/octet-stream")));
+        multipart.addBodyPart(filePart);
         // 设置邮件内容为multipart:
-        message.setContent(multipart);
-        */
+        message.setContent(multipart);*/
         // 发送邮件:============================================================================
         Transport.send(message);
     }

@@ -21,6 +21,7 @@ public class JDBC {
         config.addDataSourceProperty("idleTimeout","60000");
         config.addDataSourceProperty("maximumPoolSize","10");
     }
+    static DataSource ds = new HikariDataSource(config);   //创建连接池
 
     public static void main(String[] args) throws SQLException {
         String[] name = {"大李", "大李", "大李", "大李", "大李"};
@@ -33,7 +34,7 @@ public class JDBC {
         Delete("大李");
         Query("%",1);
     }
-    static DataSource ds = new HikariDataSource(config);   //创建连接池
+
 
     public static void Query(String name, int gender) throws SQLException {
         String sql = "SELECT * FROM students WHERE name like '" + name + "' AND gender='" + gender + "'";

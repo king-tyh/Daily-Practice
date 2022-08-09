@@ -2,11 +2,12 @@ package Liaoxuefeng;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class FILE {
     public static void main(String[] args) throws IOException {
         //若test.txt不存在则创建，若存在则删除
-        File file = new File(".\\test.txt");
+        File file = new File(".//test.txt");
         boolean res = file.createNewFile();
         System.out.printf("创建文件是否成功: %s\n",res);
         if(!res){
@@ -33,7 +34,7 @@ public class FILE {
             System.out.println(blank + file.getName());
         else if(file.isDirectory()){
             System.out.println(blank + file.getName() + "/");
-            for(File f:file.listFiles()){
+            for(File f: Objects.requireNonNull(file.listFiles())){
                 printAllFile(f,blank+"  ");
             }
         }

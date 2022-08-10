@@ -42,7 +42,7 @@ public class ThreadPoolAndConnectionPool {
     }
 }
 
-class Insert extends Thread {
+class Insert{
     final DataSource cp;
 
     Insert(DataSource cp) {

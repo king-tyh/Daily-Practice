@@ -1,16 +1,18 @@
 package Liaoxuefeng;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class test {
     public static void main(String[] args) {
-//        File f = new File(test.class.getResource("/insertData.txt").getFile());
-        File f = new File(test.class.getResource("/insertData.txt").getFile());
-        System.out.println(f.exists());
-        System.out.println(Arrays.toString("this is a test".split(" ")));
+        Weekday a = Weekday.valueOf(2);
+        Date date=new Date();
+        System.out.println(date);
+        long timestamp=date.getTime();
+        System.out.println(timestamp);
+
+        SimpleDateFormat format =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //设置格式
+        String timeText=format.format(timestamp);                                //获得带格式的字符串
+        System.out.println(timeText);
     }
 }

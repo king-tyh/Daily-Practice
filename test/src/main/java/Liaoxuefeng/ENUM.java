@@ -1,10 +1,14 @@
 package Liaoxuefeng;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ENUM {
     public static void main(String[] args){
-        Weekday day = Weekday.MON;
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        Weekday day = Weekday.values()[i-1];
+        System.out.println(Weekday.valueOf("MON"));
         switch (day){
             case MON:
             case TUE:
@@ -33,5 +37,14 @@ enum Weekday{
     @Override
     public String toString(){
         return this.chinese;
+    }
+
+    /**
+     * 通过dayValue创建Weekday
+     */
+    public static Weekday valueOf(int dayValue){
+        if(dayValue-1<0 || dayValue+1 > Weekday.values().length)
+            throw new IndexOutOfBoundsException();
+        return Weekday.values()[dayValue];
     }
 }

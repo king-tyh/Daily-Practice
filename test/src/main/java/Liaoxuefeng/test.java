@@ -16,17 +16,19 @@ public class test {
 
         MyData m = new MyData("course");
         m.setName("123");
-        System.out.println(m.toString());
+        System.out.println(m.getName());
 
     }
 }
 
 @Data
 @RequiredArgsConstructor
-class MyData{
+class MyData {
     private String name;
     private final String course;
     private int score;
     @Singular("boo")
     private List<String> book;
+
+    public String getName(){return this.name+"222";}
 }

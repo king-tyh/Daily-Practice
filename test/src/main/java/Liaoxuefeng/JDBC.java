@@ -86,6 +86,16 @@ public class JDBC {
         }
     }
 
+    public static void changeAutoIncrement(String name) throws SQLException {
+        try(Connection conn = ds.getConnection()){
+            try(PreparedStatement ps = conn.prepareStatement("DELETE FROM students WHERE name=?")){
+                ps.setObject(1,name);
+                int n = ps.executeUpdate();
+                System.out.printf("成功删除%d条数据\n", n);
+            }
+        }
+    }
+
 }
 
 

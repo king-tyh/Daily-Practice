@@ -1,5 +1,5 @@
 --clickhouse建表
-CREATE TABLE IF NOT EXISTS ai_datalake.ai_dialect ON CLUSTER aick
+CREATE TABLE IF NOT EXISTS ai_datalake.bomp_nlg_dialect ON CLUSTER aick
 (
     `id` UInt16 COMMENT '主键',
     `asrVoice` String DEFAULT '' COMMENT 'asr音色',
@@ -12,7 +12,7 @@ PRIMARY KEY (asrVoice, ttsVoice, typeDesc, name)
 ORDER BY (asrVoice, ttsVoice, typeDesc, name);
 
 --mysql建表
-CREATE TABLE IF NOT EXISTS ai_datalake.ai_dialect (
+CREATE TABLE IF NOT EXISTS ai_datalake.bomp_nlg_dialect (
 	`id` SMALLINT(16) UNSIGNED COMMENT '主键',
     `asrVoice` VARCHAR(20) DEFAULT '' COMMENT 'asr音色',
     `ttsVoice` VARCHAR(20) DEFAULT '' COMMENT 'tts音色',

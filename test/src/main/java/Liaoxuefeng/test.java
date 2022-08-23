@@ -16,7 +16,8 @@ public class test {
 
         MyData m = new MyData("course");
         m.setName("123");
-        System.out.println(m.getName());
+        System.out.println((Map<String,Object>)m);
+
 
     }
 }

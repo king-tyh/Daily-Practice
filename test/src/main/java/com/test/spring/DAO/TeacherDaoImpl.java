@@ -1,9 +1,8 @@
 package com.test.spring.DAO;
-
 import org.springframework.stereotype.Component;
 
 @Component
-public class TeacherDaoImpl {
+public class TeacherDaoImpl implements Runnable{
     public void insert() {
         System.out.println("----insert---teacher");
     }
@@ -14,5 +13,10 @@ public class TeacherDaoImpl {
 
     public void update() {
         System.out.println("----update---teacher");
+    }
+
+    @Override
+    public void run() {
+
     }
 }

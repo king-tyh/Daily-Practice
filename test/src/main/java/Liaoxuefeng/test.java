@@ -13,10 +13,15 @@ public class test {
     public static void main(String[] args) {
 
         System.out.println("99991ds".matches("9{4}.*"));
-
-        MyData m = new MyData("course");
-        m.setName("123");
-        System.out.println((Map<String,Object>)m);
+        List<MyData> t = new ArrayList<>();
+        MyData m1 = new MyData("course").setName("123");
+        MyData m2 = new MyData("course").setName("123");
+        MyData m3 = new MyData("course").setName("123");
+        t.add(m1);
+        t.add(m2);
+        t.add(m3);
+        Object o = t;
+        System.out.println(new Date());
 
 
     }
@@ -24,6 +29,7 @@ public class test {
 
 @Data
 @RequiredArgsConstructor
+@Accessors(chain = true)
 class MyData {
     private String name;
     private final String course;
@@ -31,5 +37,4 @@ class MyData {
     @Singular("boo")
     private List<String> book;
 
-    public String getName(){return this.name+"222";}
 }

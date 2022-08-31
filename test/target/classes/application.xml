@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <context:annotation-config/>
+    <context:component-scan base-package="com.test.spring"/>
+    <bean id="txManager" class="com.test.spring.utils.TxManager"/>
+    <aop:config>
+        <!--声明切入点-->
+        <aop:pointcut id="book" expression="execution(* com.test.spring.DAO.TeacherDaoImpl.*())"/>
+
+        <!-- 声明txManager为切面 -->
+        <aop:aspect ref="txManager">
+            <!--通知-->
+            <aop:before method="begin" pointcut-ref="book"/>
+            <aop:after method="commit" pointcut-ref="book"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

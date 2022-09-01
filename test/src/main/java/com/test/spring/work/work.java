@@ -118,8 +118,8 @@ public class work {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
+
     public static String getFieldValueByName(Object obj, String fieldName) {
         String v = null;
         try {

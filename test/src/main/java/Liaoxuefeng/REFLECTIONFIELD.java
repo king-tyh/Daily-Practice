@@ -1,5 +1,7 @@
 package Liaoxuefeng;
 
+import lombok.Data;
+
 import java.lang.reflect.Field;
 
 public class REFLECTIONFIELD {
@@ -20,10 +22,12 @@ public class REFLECTIONFIELD {
         //System.out.print(field.get(stu));
         Field field = cla.getDeclaredField("grade");
         field.setAccessible(true);  //访问非public权限的field前要设置setAccessible为True
-        System.out.print(field.get(stu));
+        field.set(stu,2);
+        System.out.print(stu);
     }
 }
 
+@Data
 class Student extends Person {
     public int score;
     private int grade;

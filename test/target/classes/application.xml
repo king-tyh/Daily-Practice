@@ -12,15 +12,19 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.test.spring"/>
     <bean id="txManager" class="com.test.spring.utils.TxManager"/>
-    <aop:config>
-        <!--声明切入点-->
+    <aop:aspectj-autoproxy/>
+<!--    <aop:config>
+        &lt;!&ndash;声明切入点&ndash;&gt;
         <aop:pointcut id="book" expression="execution(* com.test.spring.DAO.TeacherDaoImpl.*())"/>
 
-        <!-- 声明txManager为切面 -->
+        &lt;!&ndash; 声明txManager为切面 &ndash;&gt;
         <aop:aspect ref="txManager">
-            <!--通知-->
+            &lt;!&ndash;通知&ndash;&gt;
             <aop:before method="begin" pointcut-ref="book"/>
+
             <aop:after method="commit" pointcut-ref="book"/>
+            <aop:after-returning method="begin" pointcut-ref="book"/>
+
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
 </beans>

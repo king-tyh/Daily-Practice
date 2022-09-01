@@ -10,6 +10,7 @@
     <packaging>war</packaging>
 
 
+
     <dependencies>
         <dependency>
             <groupId>net.sourceforge.javacsv</groupId>
@@ -90,6 +91,18 @@
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>2.0.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.11</version>
         </dependency>
 
         <dependency>

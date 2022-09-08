@@ -1,16 +1,16 @@
-package com.test.spring.work;
+package test;
 
 import com.csvreader.CsvReader;
+import model.AiAppIdentify;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public class work {
+public class CsvToModelListAndGetSql {
 
     public static void main(String[] args) throws IOException {
         List<String> ysDataId = new ArrayList<>();
@@ -19,8 +19,8 @@ public class work {
         List<String> addYsId = new ArrayList<>();
         List<String> params = new ArrayList<>();
         List<AiAppIdentify> addData = new ArrayList<>();
-        readId(ysDataId, "src/main/resources/ys.csv");
-        readId(prodDataId, "src/main/resources/prod.csv");
+        readId(ysDataId, "work/src/main/resources/ys.csv");
+        readId(prodDataId, "work/src/main/resources/prod.csv");
         int i = 0;
         for (String data : ysDataId) {
             if (!prodDataId.contains(data))
@@ -60,7 +60,7 @@ public class work {
     public static void read(List<AiAppIdentify> addData, List<String> addId, List<String> allParam) throws IOException {
 
         // 第一参数：读取文件的路径 第二个参数：分隔符（不懂仔细查看引用百度百科的那段话） 第三个参数：字符集
-        CsvReader csvReader = new CsvReader("src/main/resources/prod.csv", ',', Charset.forName("UTF-8"));
+        CsvReader csvReader = new CsvReader("work/src/main/resources/prod.csv", ',', Charset.forName("UTF-8"));
 
         // 如果你的文件没有表头，这行不用执行
         // 这行不要是为了从表头的下一行读，也就是过滤表头

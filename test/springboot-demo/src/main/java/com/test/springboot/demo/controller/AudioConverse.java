@@ -1,19 +1,24 @@
-package com.test.spring.work;
+package com.test.springboot.demo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
+@Component
 @Slf4j
-public class Test {
-    public static void main(String[] args) throws Exception {
+public class AudioConverse {
+/*    public static void main(String[] args) throws Exception {
         byte[] corpus = getMp3FromPcm("src/main/resources/20220905165437544672C8631420006B.pcm");
         FileOutputStream fos = new FileOutputStream("src/main/resources/20220905165437544672C8631420006B.mp3");
         fos.write(corpus);
         fos.close();
         System.out.println(corpus.length);
         //convertAudioFiles("src/main/resources/20220905165437544672C8631420006B.pcm","src/main/resources/20220905165437544672C8631420006B.mp3");
-    }
+    }*/
 
     public static void convertAudioFiles(String src, String target) throws Exception {
         FileInputStream fis = new FileInputStream(src);

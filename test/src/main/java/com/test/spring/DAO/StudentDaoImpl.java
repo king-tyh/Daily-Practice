@@ -1,6 +1,5 @@
 package com.test.spring.DAO;
 
-import com.test.spring.DAO.BaseDao;
 import org.springframework.stereotype.Component;
 
 @Component

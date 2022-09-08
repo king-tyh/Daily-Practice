@@ -1,4 +1,4 @@
-package com.test.spring.work;
+package model;
 
 import lombok.Data;
 import java.util.Date;

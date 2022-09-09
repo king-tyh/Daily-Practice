@@ -15,7 +15,7 @@
     <aop:aspectj-autoproxy/>
 <!--    <aop:config>
         &lt;!&ndash;声明切入点&ndash;&gt;
-        <aop:pointcut id="book" expression="execution(* com.test.spring.DAO.TeacherDaoImpl.*())"/>
+        <aop:pointcut id="book" expression="execution(* TeacherDaoImpl.*())"/>
 
         &lt;!&ndash; 声明txManager为切面 &ndash;&gt;
         <aop:aspect ref="txManager">

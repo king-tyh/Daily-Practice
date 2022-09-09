@@ -1,5 +1,11 @@
 server:
   port:11024
 spring:
-  application:
-    name:demo
+  data:
+    mongodb:
+      host: 10.11.82.28
+      port: 27017
+      database: test
+      username: root
+      password: root
+      authentication-database: admin # 进行认证的数据库

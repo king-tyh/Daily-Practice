@@ -1,8 +1,6 @@
 package test;
-
 import com.csvreader.CsvReader;
 import model.AiAppIdentify;
-
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;

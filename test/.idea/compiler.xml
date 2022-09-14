@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_ADDITIONAL_VM_OPTIONS" value="-Djps.track.ap.dependencies=false" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-demo" />
+        <module name="springboot-ssm" />
         <module name="unit-test" />
         <module name="test" />
         <module name="work" />
@@ -15,10 +16,12 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="springboot" target="1.8" />
+      <module name="springboot-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-ssm" options="-parameters" />
       <module name="unit-test" options="-parameters" />
     </option>
   </component>

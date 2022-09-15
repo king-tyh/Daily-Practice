@@ -9,6 +9,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-ssm" />
+        <module name="hello-spring-boot-starter" />
         <module name="unit-test" />
         <module name="test" />
         <module name="work" />
@@ -21,6 +22,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hello-spring-boot-starter" options="-parameters" />
       <module name="springboot-ssm" options="-parameters" />
       <module name="unit-test" options="-parameters" />
     </option>

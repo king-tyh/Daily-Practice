@@ -6,6 +6,8 @@ import com.test.springbootssm.service.BookService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -32,7 +34,7 @@ public class BookServiceImpl implements BookService {
     public Book getBookByTitle(String title) {
         Book book = null;
         try{
-            log.info("查询book表: getBookByTitle{}",title);
+            log.info("查询book表: getBookByTitle({})",title);
             book = bookMapper.queryBookByTitle(title);
         }catch (Exception e){
             log.error("查询book表出错: ",e);
@@ -42,12 +44,14 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public boolean insertBook(Book book) {
+        boolean result=false;
         try{
             log.info("插入book表: insertBook");
             bookMapper.insertBook(book);
+            result = true;
         }catch (Exception e){
             log.error("插入book表出错: ",e);
         }
-        return true;
+        return result;
     }
 }

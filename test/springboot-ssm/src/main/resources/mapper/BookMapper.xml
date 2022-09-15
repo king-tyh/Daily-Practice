@@ -4,16 +4,26 @@
 
 
 <mapper namespace="com.test.springbootssm.mapper.BookMapper">
-    <insert id="insertBook" parameterType="book">
-        insert into novel(`title`,`desc`,`author`,`novel_type`,`tags`)
-        values (#{title},#{desc},#{author},#{novel_type},#{tags})
+    <resultMap id="bookMap" type="com.test.springbootssm.model.Book">
+        <!--    column数据库中的字段，property实体类中的属性    -->
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="desc" property="desc"/>
+        <result column="author" property="author"/>
+        <result column="novel_type" property="novelType"/>
+        <result column="tags" property="tags"/>
+    </resultMap>
+
+    <insert id="insertBook" parameterType="com.test.springbootssm.model.Book" useGeneratedKeys="true" keyProperty="id">
+        insert into book(`title`,`desc`,`author`,`novel_type`,`tags`)
+        values (#{title},#{desc},#{author},#{novelType},#{tags})
     </insert>
 
-    <select id="listBooks" resultType="book">
-        select * from novel
+    <select id="listBooks" resultMap="bookMap" resultSets="java.util.List">
+        select * from book
     </select>
 
-    <select id="queryBookByTitle" parameterType="java.lang.String" resultType="book">
-        select * from novel where `title`=#{title}
+    <select id="queryBookByTitle" parameterType="java.lang.String" resultMap="bookMap">
+        select * from book where `title`=#{title}
     </select>
 </mapper>

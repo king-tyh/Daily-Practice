@@ -78,9 +78,15 @@ public class BookController {
     }
 
     @RequestMapping("/test")
-    public String test(Model model){
+    public String test(Model model, String title){
         System.out.println("--------->>>test");
+        Book book = bookService.getBookByTitle(title);
         model.addAttribute("str","从控制器传递到页面的数据");
+        model.addAttribute("book",book);
+        model.addAttribute("color","red");
+
+        List<Book> books = bookService.getBooks();
+        model.addAttribute("books",books);
         return "index";
     }
 

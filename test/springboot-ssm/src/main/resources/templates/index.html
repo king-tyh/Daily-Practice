@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style th:inline="css">
+        div{color: [[${color}]]}
+    </style>
 </head>
 <body>
-    <labbel th:text="${str}">静态文本</labbel>
+    <div id="header" th:include="header::header"></div>
+
+    <div id="content">
+        <labbel th:text="${str}">静态文本</labbel>
+        <hr/>
+        <label th:inline="text">[[${book.title}]]</label>
+        <hr/>
+        <div th:object="${book}">
+            <p th:text="*{title}"></p>
+            <p th:text="'简介:' + *{desc}"></p>
+            <p th:text="'作者:' + *{author}"></p>
+            <p th:if="*{novelType}=='灵异'">请谨慎阅读</p>
+            <p th:unless="*{novelType}=='灵异'">非灵异</p>
+        </div>
+        <div th:switch="${book.author}">
+            <p th:case="三石">白金作家</p>
+            <p th:case="乌贼">黄金作家</p>
+            <p th:case="*">平台作家</p>
+        </div>
+
+        <hr/>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>作者</th>
+                <th>简介</th>
+                <th>类型</th>
+            </tr>
+
+            <tr th:each="b:${books}">
+                <td th:text="${b.id}"></td>
+                <td th:text="${b.title}"></td>
+                <td th:text="${b.author}"></td>
+                <td th:text="${b.desc}"></td>
+                <td th:text="${b.novelType}"></td>
+            </tr>
+        </table>
+
+        <script type="text/javascript" th:inline="javascript">
+            var s = [[${book}]];
+            console.log(s.title);
+        </script>
+    </div>
+
+    <div id="footer" th:include="footer::footer"></div>
 </body>
 </html>

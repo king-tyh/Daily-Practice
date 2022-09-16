@@ -11,3 +11,6 @@ spring:
     suffix: .html
     encoding: UTF-8
     mode: HTML5
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

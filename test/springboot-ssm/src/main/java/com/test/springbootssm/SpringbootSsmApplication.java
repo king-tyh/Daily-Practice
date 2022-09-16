@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.test.springbootssm.mapper")
 public class SpringbootSsmApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.springbootssm.mapper.ChapterMapper">
+
+    <!--    Page<Chapter> selectPageVo(@Param("page")Page page,@Param("book_id")Integer bookId)-->
+    <select id="selectPageVo" resultType="Chapter">
+        select id,title,book_id,content_id,words from `chapter` where `is_delete`=0 and (`book_id`=#{bookId})
+    </select>
+</mapper>

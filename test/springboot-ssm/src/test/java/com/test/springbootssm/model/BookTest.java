@@ -21,7 +21,7 @@ public class BookTest {
     public  void testInsertBook() throws Exception{
         Book book = new Book(0,"恐怖复苏","简介: 恐怖复苏","三石","灵异","末日");
         bookMapper.insertBook(book);
-        //Assert.assertEquals(book.getId().intValue(),3);
+        //Assert.assertEquals(book.getId(),3);
     }
 
     @Test

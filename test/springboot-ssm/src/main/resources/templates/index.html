@@ -16,14 +16,14 @@
         <hr/>
         <label th:inline="text">[[${book.title}]]</label>
         <hr/>
-        <div th:object="${book}">
+        <div th:object="${book[0]}">
             <p th:text="*{title}"></p>
             <p th:text="'简介:' + *{desc}"></p>
             <p th:text="'作者:' + *{author}"></p>
             <p th:if="*{novelType}=='灵异'">请谨慎阅读</p>
             <p th:unless="*{novelType}=='灵异'">非灵异</p>
         </div>
-        <div th:switch="${book.author}">
+        <div th:switch="${book[0].author}">
             <p th:case="三石">白金作家</p>
             <p th:case="乌贼">黄金作家</p>
             <p th:case="*">平台作家</p>

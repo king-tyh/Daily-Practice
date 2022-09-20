@@ -1,9 +1,12 @@
 package com.test.springbootssm.service.impl;
 
+import com.test.springbootssm.controller.ChapterController;
 import com.test.springbootssm.mapper.BookMapper;
 import com.test.springbootssm.model.Book;
 import com.test.springbootssm.service.BookService;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +18,7 @@ import java.util.List;
 @Slf4j
 @Service("bookService")
 public class BookServiceImpl implements BookService {
+    Logger log = LoggerFactory.getLogger(BookService.class);
     @Autowired(required = false)
     private BookMapper bookMapper;
 
@@ -31,15 +35,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book getBookByTitle(String title) {
-        Book book = null;
+    public List<Book> getBookByTitle(String title) {
+        List<Book> books = null;
         try{
             log.info("查询book表: getBookByTitle({})",title);
-            book = bookMapper.queryBookByTitle(title);
+            books = bookMapper.queryBookByTitle(title);
         }catch (Exception e){
             log.error("查询book表出错: ",e);
         }
-        return book;
+        return books;
     }
 
     @Override

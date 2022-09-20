@@ -3,11 +3,11 @@ spring:
     cache: false
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/novel?characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://139.159.235.100:3306/novel?characterEncoding=UTF-8&useSSL=false
       # mysql-version 大于 8.0 com.mysql.cj.jdbc.Driver
       driver-class-name: com.mysql.jdbc.Driver
       username: root
-      password: 123456
+      password: Tyh200317@
       # 初始化连接池连接数
       initial-size: 1
       # 最小连接数

@@ -13,7 +13,7 @@
         select * from book
     </select>
 
-    <select id="queryBookByTitle" parameterType="java.lang.String" resultType="Book">
+    <select id="queryBookByTitle" parameterType="java.lang.String" resultType="Book" resultSets="java.util.List">
         select * from book where `title`=#{title}
     </select>
 </mapper>

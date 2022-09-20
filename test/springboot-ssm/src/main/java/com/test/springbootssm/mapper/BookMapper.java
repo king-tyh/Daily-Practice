@@ -10,5 +10,5 @@ public interface BookMapper {
 
     List<Book> listBooks() throws Exception;
 
-    Book queryBookByTitle(String title) throws Exception;
+    List<Book> queryBookByTitle(String title) throws Exception;
 }

@@ -11,6 +11,9 @@ spring:
     suffix: .html
     encoding: UTF-8
     mode: HTML5
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

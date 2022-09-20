@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-public class BookResponse implements Serializable {
+public class WebResponse implements Serializable {
 
     private int code;
 

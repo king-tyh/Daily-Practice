@@ -14,7 +14,7 @@
     <div id="content">
         <labbel th:text="${str}">静态文本</labbel>
         <hr/>
-        <label th:inline="text">[[${book.title}]]</label>
+        <label th:inline="text">[[${book[0].title}]]</label>
         <hr/>
         <div th:object="${book[0]}">
             <p th:text="*{title}"></p>

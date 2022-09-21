@@ -11,7 +11,8 @@ import java.util.Date;
 @Data
 @ApiModel(value="章节")
 @TableName("chapter")
-public class Chapter {
+public class Chapter extends BaseModel{
+    private static final long serialVersionUID = 1L;
     @ApiModelProperty(name = "id", value = "id", example = "1")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;

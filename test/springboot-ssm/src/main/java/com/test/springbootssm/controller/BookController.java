@@ -6,10 +6,10 @@ import com.test.springbootssm.vo.WebResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,6 @@ import java.util.List;
 
 @RequestMapping("/test")
 @RestController
-@Slf4j
 @Api(tags = "小说信息管理")
 public class BookController {
 
@@ -48,7 +47,7 @@ public class BookController {
     @ResponseBody
     @RequestMapping(value = "/addBook", method = {RequestMethod.POST})
     @ApiOperation(value = "添加小说")
-    public WebResponse addBook(@RequestBody Book book) {
+    public WebResponse addBook(Book book) {
         WebResponse response = new WebResponse();
         response.setMsg("添加小说失败");
         response.setCode(1);

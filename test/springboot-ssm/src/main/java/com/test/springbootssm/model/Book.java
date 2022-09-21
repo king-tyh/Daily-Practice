@@ -9,7 +9,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.type.Alias;
+
+import java.io.Serializable;
 
 /**
  * Book实体类
@@ -19,7 +20,8 @@ import org.apache.ibatis.type.Alias;
 @NoArgsConstructor
 @ApiModel(description="小说")
 @TableName("book")
-public class Book {
+public class Book extends BaseModel{
+    private static final long serialVersionUID = 1L;
     /**
      * id
      */

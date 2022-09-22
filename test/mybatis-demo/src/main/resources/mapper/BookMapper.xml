@@ -3,12 +3,45 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mybatis.demo.mapper.BookMapper">
+    <!--useGeneratedKeys 设置添加操作是否需要回填生成的主键-->
+    <!--keyProperty 设置回填的主键赋值到哪个属性-->
     <insert id="insertBook" parameterType="com.mybatis.demo.model.Book">
-        insert into book(`id`, `title`, `desc`, `author`, `novel_type`, `tags`)
-        values (#{id}, #{title}, #{desc}, #{author}, #{novelType}, #{tags})
+        insert into book(`title`, `desc`, `author`, `novel_type`, `tags`)
+        values (#{title}, #{desc}, #{author}, #{novelType}, #{tags})
     </insert>
 
+
     <delete id="deleteBookById" parameterType="java.lang.Integer">
-        delete from book where id=#{id}
+        delete
+        from `book`
+        where id = #{id}
     </delete>
+
+    <update id="updateBook">
+        update `book`
+        set `title`=#{title},
+            `desc`=#{desc},
+            `author`=#{author},
+            `novel_type`=#{novelType},
+            `tags`=#{tags}
+        where `id` = #{id}
+    </update>
+
+    <!--resultMap用于定义实体类与数据表的映射关系（ORM）-->
+    <resultMap id="Book" type="com.mybatis.demo.model.Book">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="desc" property="desc"/>
+        <result column="author" property="author"/>
+        <result column="novel_type" property="novelType"/>
+        <result column="tags" property="tags"/>
+    </resultMap>
+
+    <!--resultType 指定查询结果封装的对象的实体类，查询的字段必须与实体类相同且有setter-->
+    <!--resultSets 指定当前操作返回的集合类型（可省略）-->
+    <!--resultMap用于引用一个实体的映射关系，当配置了resultMap之后 resultType可以省略-->
+    <select id="listBooks" resultMap="Book" resultSets="java.util.List">
+        select `id`, `title`, `desc`, `author`, `novel_type`, `tags`
+        from `book`
+    </select>
 </mapper>

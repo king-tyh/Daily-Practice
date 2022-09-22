@@ -2,6 +2,30 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--properties：1.可以定义键值对 2.可以引用属性文件-->
+    <!--<properties>
+        <property name="mysql_url" value="jdbc:mysql://localhost:3306/novel?characterEncoding=uft-8"/>
+    </properties>-->
+    <properties resource="jdbc.properties"/>
+
+    <!--设置mybatis的属性-->
+    <settings>
+        <!--启动二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--启动延迟加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+
+    <!--加载实体类-->
+    <typeAliases>
+        <typeAlias type="com.mybatis.demo.model.Book" alias="Book"/>
+    </typeAliases>
+
+    <!--配置mybatis插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+
     <!--在environments配置数据库连接信息-->
     <!--可以配置多个environment标签，每一个可以定义一套连接配置-->
     <!--default指定默认environment配置-->
@@ -23,15 +47,17 @@
             <transactionManager type="JDBC"/>
             <!--配置数据库连接信息-->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://139.159.235.100:3306/novel?characterEncoding=utf-8&amp;useSSL=false"/>
-                <property name="username" value="root"/>
-                <property name="password" value="Tyh200317@"/>
+                <property name="driver" value="${mysql_driver}"/>
+                <property name="url" value="${mysql_url}"/>
+                <property name="username" value="${mysql_username}"/>
+                <property name="password" value="${mysql_password}"/>
             </dataSource>
         </environment>
     </environments>
 
+    <!--加载mapper映射文件-->
     <mappers>
         <mapper resource="mapper/BookMapper.xml"/>
     </mappers>
+
 </configuration>

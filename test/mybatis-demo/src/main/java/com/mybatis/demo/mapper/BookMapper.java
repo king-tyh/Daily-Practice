@@ -2,8 +2,15 @@ package com.mybatis.demo.mapper;
 
 import com.mybatis.demo.model.Book;
 
-public interface BookMapper {
-    public int insertBook(Book book);
+import java.util.List;
 
-    public int deleteBookById(Integer id);
+public interface BookMapper {
+    int insertBook(Book book);
+
+    int deleteBookById(Integer id);
+
+    int updateBook(Book book);
+
+    List<Book> listBooks();
+
 }

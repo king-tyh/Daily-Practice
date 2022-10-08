@@ -8,6 +8,8 @@
     </properties>-->
     <properties resource="jdbc.properties"/>
 
+
+
     <!--设置mybatis的属性-->
     <settings>
         <!--启动二级缓存-->
@@ -46,9 +48,10 @@
             <!--配置数据库管理方式-->
             <transactionManager type="JDBC"/>
             <!--配置数据库连接信息-->
-            <dataSource type="POOLED">
-                <property name="driver" value="${mysql_driver}"/>
-                <property name="url" value="${mysql_url}"/>
+            <!--POOLED使用MyBatis内置的连接池实现 PooledDataSourceFactory自定义连接池工厂-->
+            <dataSource type="com.mybatis.demo.utils.DruidDataSourceFactory">
+                <property name="driverClass" value="${mysql_driver}"/>
+                <property name="jdbcUrl" value="${mysql_url}"/>
                 <property name="username" value="${mysql_username}"/>
                 <property name="password" value="${mysql_password}"/>
             </dataSource>

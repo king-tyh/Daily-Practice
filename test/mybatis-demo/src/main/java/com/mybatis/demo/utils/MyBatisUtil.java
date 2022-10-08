@@ -31,6 +31,14 @@ public class MyBatisUtil {
         return getSqlSession(false);
     }
 
+    public static void close(){
+        SqlSession session = local.get();
+        if (session!=null){
+            session.close();
+            local.set(null);
+        }
+    }
+
     private static SqlSession getSqlSession(boolean isAutoCommit){
         SqlSession sqlSession = local.get();
         if (sqlSession == null){

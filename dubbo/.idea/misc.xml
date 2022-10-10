@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/link-consumer" />
+    <file type="web" url="file://$PROJECT_DIR$/link-interface" />
+    <file type="web" url="file://$PROJECT_DIR$/link-provider" />
+    <file type="web" url="file://$PROJECT_DIR$/zk-consumer" />
+    <file type="web" url="file://$PROJECT_DIR$/zk-consumer-plus" />
+    <file type="web" url="file://$PROJECT_DIR$/zk-interface" />
+    <file type="web" url="file://$PROJECT_DIR$/zk-userService-provider" />
+    <file type="web" url="file://$PROJECT_DIR$/zk-userService-provider-plus" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/link-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/link-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/link-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-userService-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-userService-provider-plus/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-consumer-plus/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

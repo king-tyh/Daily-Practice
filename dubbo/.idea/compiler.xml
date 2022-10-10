@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zk-interface" />
+        <module name="link-provider" />
+        <module name="link-consumer" />
+        <module name="zk-userService-provider" />
+        <module name="zk-consumer-plus" />
+        <module name="zk-userService-provider-plus" />
+        <module name="zk-consumer" />
+        <module name="link-interface" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

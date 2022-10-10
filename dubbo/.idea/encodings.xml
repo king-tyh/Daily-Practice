@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/link-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-interface/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-interface/zk-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-interface/zk-interface/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/link-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-consumer-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-consumer-plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-interface/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-userService-provider-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-userService-provider-plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-userService-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zk-userService-provider/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

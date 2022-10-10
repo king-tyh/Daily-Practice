@@ -13,8 +13,6 @@
         <option value="$PROJECT_DIR$/springboot-ssm/pom.xml" />
         <option value="$PROJECT_DIR$/hello-spring-boot-starter/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-demo/pom.xml" />
-        <option value="$PROJECT_DIR$/link-userService-provider/pom.xml" />
-        <option value="$PROJECT_DIR$/link-consumer/pom.xml" />
       </list>
     </option>
   </component>

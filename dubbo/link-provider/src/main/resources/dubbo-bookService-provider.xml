@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--服务提供者声明名称：必须保证服务名称的唯一性，它的名称是dubbo内部使用的唯一标识-->
+    <dubbo:application  name="link-bookService-provider"/>
+
+    <!--访问服务协议名称及端口号，dubbo官方推荐dubbo协议，端口号默认20880-->
+    <!--
+    name:指定协议名称
+    port:指定端口号
+    -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!--
+    暴露接口服务 -> dubbo:service
+    interface:暴露接口的全限定类名
+    ref:接口引用的实现类再spring容器中的表示
+    registry:如果不适用注册中心,则值为:N/A
+    -->
+    <dubbo:service interface="com.test.myInterface.service.BookService" ref="bookService" registry="N/A"/>
+
+    <!--将接口的实现类加载到spring容器中,spring配置过此处可以不配置-->
+    <bean id="bookService" class="com.test.provider.service.impl.BookServiceImpl"/>
+</beans>

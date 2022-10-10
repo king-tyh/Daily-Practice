@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <!--服务消费者声明名称：保证唯一性-->
+    <dubbo:application name="link-consumer"/>
+
+    <!--引用远程接口服务-->
+    <!--
+        引用远程服务接口：
+        id：远程服务接口对象名称
+        interface：调用远程接口的全限定类名
+        url：访问服务接口的地址
+        registry：不适用注册中心，值为：N/A
+    -->
+    <dubbo:reference id="bookService"
+                     interface="com.test.myInterface.service.BookService"
+                     url="dubbo://localhost:20880"
+                     registry="N/A"/>
+
+</beans>

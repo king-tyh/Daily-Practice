@@ -32,6 +32,7 @@
           <option value="http://primefaces.org/ui" />
           <option value="http://tiles.apache.org/" />
           <option value="http://maven.apache.org" />
+          <option value="http://dubbo.apache.org" />
         </list>
       </option>
     </inspection_tool>

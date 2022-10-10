@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--声明dubbo服务提供者名称：保证唯一性-->
+    <dubbo:application name="zk-provider-plus"/>
+
+    <!--声明协议和端口-->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <dubbo:registry address="zookeeper://localhost:2181"/>
+
+    <!--暴露服务接口-->
+    <dubbo:service interface="com.test.myZkInterface.service.BookService"
+                   ref="bookServiceImpl1"
+                   version="1.0"/>
+
+    <dubbo:service interface="com.test.myZkInterface.service.BookService"
+                   ref="bookServiceImpl2"
+                   version="2.0"/>
+
+    <!--加载接口实现类-->
+    <bean id="bookServiceImpl1" class="com.test.zkProvider.service.impl.BookServiceImpl1"/>
+    <bean id="bookServiceImpl2" class="com.test.zkProvider.service.impl.BookServiceImpl2"/>
+</beans>

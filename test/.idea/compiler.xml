@@ -9,11 +9,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-ssm" />
+        <module name="hello-spring-boot-starter" />
+        <module name="mybatis-demo" />
         <module name="unit-test" />
         <module name="test" />
         <module name="work" />
-        <module name="hello-spring-boot-starter" />
-        <module name="mybatis-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
